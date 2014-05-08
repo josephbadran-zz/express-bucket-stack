@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+dist
+.tmp
+
+*.db
+pids
+logs
+results
+.DS_Store
