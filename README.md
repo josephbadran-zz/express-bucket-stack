@@ -13,5 +13,5 @@ nodemon app.coffee
 Prod:
 ```
 grunt build
-NODE_ENV=production forever -c coffee app.coffee
+NODE_ENV=production forever start -c coffee app.coffee
 ```
