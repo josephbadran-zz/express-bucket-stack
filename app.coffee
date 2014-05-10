@@ -10,7 +10,7 @@ require("bucket-node").initSingletonBucket 'cms.db', (data) ->
   routes = require("./routes/index")
   app = express()
 
-  console.log process.env.NODE_ENV
+  #console.log process.env.NODE_ENV
 
   app.set "port", process.env.PORT or 3000
   app.set "view engine", "jade"
@@ -20,7 +20,10 @@ require("bucket-node").initSingletonBucket 'cms.db', (data) ->
   app.use bodyParser.urlencoded()
   app.use cookieParser()
   app.use require("coffee-middleware")(src: path.join(__dirname, "public"))
-  app.use require("less-middleware")(src: path.join(__dirname, "public"))
+  app.use require("less-middleware")(path.join(__dirname, "public"),
+    parser:
+      paths: [ path.join(__dirname, "public", "bower_components") ]
+  )
 
   if process.env.NODE_ENV == "production"
     app.set "views", path.join(__dirname, "dist/views")

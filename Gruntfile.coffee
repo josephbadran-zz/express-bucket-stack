@@ -46,7 +46,7 @@ module.exports = (grunt) ->
       options:
         assetsDirs: ["dist"]
 
-  grunt.registerTask "laggtillgrejs", "bowerInstall"
+  grunt.registerTask "bower", "bowerInstall"
 
   grunt.registerTask "build", [
     "clean:dist"
