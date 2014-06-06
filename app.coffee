@@ -19,8 +19,12 @@ require("bucket-node").initSingletonBucket 'cms.db', (data) ->
   app.use bodyParser.json()
   app.use bodyParser.urlencoded()
   app.use cookieParser()
+  
   app.use require("coffee-middleware")(src: path.join(__dirname, "public"))
-  app.use require("less-middleware")(path.join(__dirname, "public"),
+  
+  app.use "/css", require("less-middleware")(path.join(__dirname, "public", "less"),
+    dest: path.join(__dirname, "public", "css")
+    debug: true
     parser:
       paths: [ path.join(__dirname, "public", "bower_components") ]
   )
