@@ -15,3 +15,5 @@ Prod:
 grunt build
 NODE_ENV=production forever start -c coffee app.coffee
 ```
+
+TODO: Add flash in app.coffee, crudder.
