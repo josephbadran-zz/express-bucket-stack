@@ -1,0 +1,34 @@
+doctype html
+// [if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]
+// [if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]
+// [if IE 8]>         <html class="no-js lt-ie9"> <![endif]
+// [if gt IE 8]><!
+html.no-js(ng-app="naratusApp")
+  //<![endif]
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    base(href="/")
+    title Naratus
+    meta(name="description", content="")
+    meta(name="viewport", content="width=device-width")
+    <!-- build:css(public) css/style.css -->
+    link(rel="stylesheet",href="/css/style.css")
+    <!-- endbuild -->
+
+  body(ng-controller="AppCtrl")
+    div(ng-view)
+
+    <!-- build:lib(public) js/lib.js -->
+    script(src="/bower_components/angular/angular.js")
+    script(src="/bower_components/angular-route/angular-route.js")
+    script(src="/bower_components/angular-animate/angular-animate.js")
+    <!-- endbuild -->
+
+    <!-- build:app(./) js/app.js -->
+    script(src="/app/app.js")
+    script(src="/app/services.js")
+    script(src="/app/controllers.js")
+    script(src="/app/directives.js")
+    <!-- endbuild -->
+
